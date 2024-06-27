@@ -15,6 +15,7 @@ const DiagnosticList = () => {
           </tr>
           </thead>
           <tbody>
+          <div className='table-body'>
           <tr>
             <td>Hypertension</td>
             <td>Chronic high blood pressure</td>
@@ -90,7 +91,9 @@ const DiagnosticList = () => {
             <td>Chronic high blood pressure</td>
             <td>Under Observation</td>
           </tr>
+          </div>
           </tbody>
+          
 
         </table>
       </div>
