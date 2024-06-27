@@ -240,10 +240,6 @@ table{
   width: 100%;
   table-layout: fixed;
 }
-tbody{
-  height: 300px;
-  overflow-y: auto;
-}
 
 td{
   padding: 1rem;
@@ -287,3 +283,11 @@ td{
 #selector ::after{
   background: transparent;
 }
+
+ .table-body {
+width: 303%;
+
+    height: 300px;
+    overflow-y: auto;
+
+  }
