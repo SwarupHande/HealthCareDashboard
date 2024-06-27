@@ -1,13 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  padding: 0;
+  font-family: manrope, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+p,h3{
+  margin: 0px;
+  padding:0px;
+}
+p,h5{
+  margin: 0px;
+  padding: 0px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+body{
+  background-color: #F6F7F8;
+}
+.app{
+  margin: 1rem 2rem;
+}
+.navBar{
+  display: flex;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+  border-radius: 1.5rem;
+  padding: 0 1rem;
+  align-items: center;
+}
+.logo img{
+  height: 2rem;
+}
+.menu ul{
+  display: flex;
+  gap:2.5rem;
+}
+.menu ul li{
+  list-style: none;
+  padding: .2rem .7rem;
+  border-radius: 1rem;
+  font-weight: 400;
+}
+.menu ul li:hover{
+  cursor: pointer;
+  background-color: #01F0D0;
+  font-weight: 500;
+}
+.DrProfile{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.DrInfo h5{
+  font-size: .8rem;
+}
+.DrInfo p{
+  font-size: xx-small;
+}
+.DrImage img{
+  border-radius: 50%;
+  height: 44px;
+  width: 44px;
+}
+.container{
+  display: flex;
+  gap: 1rem;
+}
+.patient-data{
+  display: flex;
+  gap: 1rem;
+}
+.diagnosis-list-history, .profile-lab-result{
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-container{
+  background-color: #FFFFFF;
+  margin-top: 1rem;
+  border-radius: 1.5rem;
+  padding: 1rem;
+}
+.patientList{
+  width: 367px;
+}
+
+.patientProfile, #lab-result{
+  height: fit-content;
+  width: 367px;
+}
+.patients{
+  max-height: 1054px;
+  overflow-y: auto;
+}
+::-webkit-scrollbar{
+  width: 6px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #072635;  
+  border-radius: 1rem;
+
+  }
+  ::-webkit-scrollbar-track{
+    background-color: #E3E4E6;
+    border-radius: 10px;
+}
+.patientList .heading{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.patientCard{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem  1rem .5rem .5rem;
+}
+.patientCard:hover{
+  background-color: #D8FCF7;
+  cursor: pointer;
+}
+.patientCard .left{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.patientCard img{
+  height: 4rem;
+  width: 4rem;
+}
+.information h3{
+  font-size: small;
+}
+.information p{
+  font-size: .8rem;
+  color: #707070;
+}
+.patientCenterElem img{
+  margin-top: 1rem;
+}
+.patientCenterElem .btn{
+  margin-bottom: 1rem;
+}
+.profileSub{
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: .5rem 0;
+}
+.profileSub .icon{
+  font-size: 1rem;
+  background-color: #F6F7F8;
+  height: 1rem;
+  width: 1rem;
+  padding: .5rem;
+  border-radius: 50%;
+}
+.btn{
+  border: none;
+  padding: .5rem 1rem;
+  background-color: #01F0D0;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.patientCenterElem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.subProfile{
+  margin-bottom: 1rem;
+}
+
+.status{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 1rem;
+}
+.status-box{
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.status-box img{
+  border-radius: 50%;
+}
+.respiratoryRate{
+  background-color: #E0F3FA;
+}
+
+.status-box .result{
+  font-size: .8rem;
+  margin-top: 1rem;
+}
+.status-box h3{
+  font-size: 2rem;
+}
+.temperature{
+  background-color: #FFE6E9;
+}
+
+.heartRate{
+  background-color: #FFE6F1;
+}
+
+.diagnosticList{
+  background-color: #FFFFFF;
+}
+.diagnosticList h3{
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+thead{
+  background-color: #F6F7F8;
+  font-weight: 700;
+  border-top-left-radius: 1rem;
+  text-align: left;
+}
+th{
+  padding : 1rem;
+}
+th:first-child{
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+th:last-child{
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+table{
+  width: 100%;
+  table-layout: fixed;
+}
+tbody{
+  height: 300px;
+  overflow-y: auto;
+}
+
+td{
+  padding: 1rem;
+}
+.lab-results{
+  display:flex;
+  justify-content: space-between;
+}
+.diagnosisHistory .chart{
+  padding: 1rem;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+.chart-container{
+  display: flex;
+  background-color: #F4F0FE;
+  margin : 1rem 0;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.chart{
+  width: 75%;
+}
+.chart-result{
+  width: 25%;
+}
+.chart-box{
+  margin-top: 1rem;
+  
+}
+#selector{
+  border: none;
+  outline: none;
+  width: 8rem;
+  background: transparent;
+  font-size: 1rem;
+}
+#selector ::after{
+  background: transparent;
 }
