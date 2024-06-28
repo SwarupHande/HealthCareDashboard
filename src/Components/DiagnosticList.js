@@ -1,6 +1,7 @@
 import React from 'react'
+import DiagnosisTableContent from './DiagnosisTableContent'
 
-const DiagnosticList = () => {
+const DiagnosticList = ({patientData}) => {
   return (
     <div className="diagnosticList sub-container">
       <h3>Diagnostic List</h3>
@@ -15,83 +16,7 @@ const DiagnosticList = () => {
           </tr>
           </thead>
           <tbody>
-          <div className='table-body'>
-          <tr>
-            <td>Hypertension</td>
-            <td>Chronic high blood pressure</td>
-            <td>Under Observation</td>
-          </tr>
-          <tr>
-            <td>Hypertension</td>
-            <td>Chronic high blood pressure</td>
-            <td>Under Observation</td>
-          </tr>
-          <tr>
-            <td>Hypertension</td>
-            <td>Chronic high blood pressure</td>
-            <td>Under Observation</td>
-          </tr>
-          <tr>
-            <td>Hypertension</td>
-            <td>Chronic high blood pressure</td>
-            <td>Under Observation</td>
-          </tr>
-          <tr>
-            <td>Hypertension</td>
-            <td>Chronic high blood pressure</td>
-            <td>Under Observation</td>
-          </tr>
-          <tr>
-            <td>Hypertension</td>
-            <td>Chronic high blood pressure</td>
-            <td>Under Observation</td>
-          </tr>
-          <tr>
-            <td>Hypertension</td>
-            <td>Chronic high blood pressure</td>
-            <td>Under Observation</td>
-          </tr>
-          <tr>
-            <td>Hypertension</td>
-            <td>Chronic high blood pressure</td>
-            <td>Under Observation</td>
-          </tr>
-          <tr>
-            <td>Hypertension</td>
-            <td>Chronic high blood pressure</td>
-            <td>Under Observation</td>
-          </tr>
-          <tr>
-            <td>Hypertension</td>
-            <td>Chronic high blood pressure</td>
-            <td>Under Observation</td>
-          </tr>
-          <tr>
-            <td>Hypertension</td>
-            <td>Chronic high blood pressure</td>
-            <td>Under Observation</td>
-          </tr>
-          <tr>
-            <td>Hypertension</td>
-            <td>Chronic high blood pressure</td>
-            <td>Under Observation</td>
-          </tr>
-          <tr>
-            <td>Hypertension</td>
-            <td>Chronic high blood pressure</td>
-            <td>Under Observation</td>
-          </tr>
-          <tr>
-            <td>Hypertension</td>
-            <td>Chronic high blood pressure</td>
-            <td>Under Observation</td>
-          </tr>
-          <tr>
-            <td>Hypertension</td>
-            <td>Chronic high blood pressure</td>
-            <td>Under Observation</td>
-          </tr>
-          </div>
+            {patientData.diagnostic_list.map((elem)=><DiagnosisTableContent data={elem}/>)}
           </tbody>
           
 

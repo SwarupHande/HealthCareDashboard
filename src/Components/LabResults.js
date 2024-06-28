@@ -1,14 +1,11 @@
 import React from 'react'
-import { FiDownload } from "react-icons/fi";
-// import { Scrollbar } from 'react-scrollbars-custom';
-
-const LabResults = () => {
+import LabResultCard from './LabResultCard';
+const LabResults = ({patientData}) => {
   return (
-    < div className='sub-container' id='lab-result'>
+    <div className='sub-container' id='lab-result'>
         <h2>Lab Results</h2>
-        <div className='lab-results'>
-            <p>Blood Tests </p>
-            <FiDownload/>
+        <div className="results">
+        {patientData.lab_results.map((results)=><LabResultCard results={results}/>)}
         </div>
     </div>
   )

@@ -16,16 +16,28 @@ const App = () => {
       { headers: { Authorization: `Basic ${auth}` } }
     );
     const data = await response.json();
-    console.log(data);
     setPatients(data);
-    console.log(patients);
   };
   const [patients, setPatients] = useState([]);
+  const [period, setPeriod] = useState(6);
+  const handleSelect = (period) => {
+    setPeriod(period);
+    console.log(period);
+  }
+  const [id,setId] = useState()
   useEffect(() => {
-    return () => {
-      fetchData();
-    };
+    fetchData();
   }, []);
+  useEffect(() => {
+    if(!id&&patients.length>0){
+      setId(patients[0].phone_number);
+    }
+  }, [patients])
+  const currPatient = (patients.length>0)&&(!!id)&&patients.find(({phone_number})=>phone_number===id); 
+  const handleOnClick = (phone) =>{
+    setId(phone);
+    console.log(phone);
+  }
 
   return (
     <div className="app">
@@ -34,16 +46,16 @@ const App = () => {
       </header>
       <div className="container">
         <div className="patient-list">
-          <PatentList patients={patients} />
+          <PatentList patients={patients} handleOnClick={handleOnClick}/>
         </div>
         <div className="patient-data">
           <div className="diagnosis-list-history">
-            <DiagnosisHistory />
-            <DiagnosticList />
+          {currPatient && <DiagnosisHistory patientData = {currPatient} handleSelect={handleSelect}/>} 
+          {currPatient && <DiagnosticList patientData={currPatient}/>}
           </div>
           <div className="profile-lab-result">
-            <PatientProfile />
-            <LabResults />
+          {currPatient && <PatientProfile patientData={currPatient}/>}
+          {currPatient && <LabResults patientData={currPatient}/>}
           </div>
         </div>
       </div>

@@ -4,43 +4,44 @@ import { GrSchedule } from "react-icons/gr";
 import { BsGenderFemale } from "react-icons/bs";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdOutlineVerifiedUser } from "react-icons/md";
-const PatientProfile = () => {
+const PatientProfile = ({patientData}) => {
+  if(patientData)
   return (
     <div className='patientProfile sub-container'>
       <div className='patientCenterElem'>
-        <img src="https://fedskillstest.ct.digital/4.png" alt="ProfileImage" />
-        <h2>Jessica Taylor</h2>
+        <img src={patientData.profile_picture} alt="ProfileImage" />
+        <h2>{patientData.name}</h2>
       </div>
         <div className="profileSub">
           <div className="icon">
           <GrSchedule/>
           </div>
-          <InfoBox title={"Date Of Birth"} subInfo={"August 23, 1996"} />
+          <InfoBox title={"Date Of Birth"} subInfo={patientData.date_of_birth} />
         </div>
         <div className="subProfile">
         <div className="profileSub">
           <div className="icon">
           <BsGenderFemale/>
           </div>
-          <InfoBox title={"Gender"} subInfo={"Female"} />
+          <InfoBox title={"Gender"} subInfo={patientData.gender} />
         </div>
         <div className="profileSub">
           <div className="icon">
           <FaPhoneAlt/>
           </div>
-          <InfoBox title={"Contact Info"} subInfo={"(415) 555-4564"} />
+          <InfoBox title={"Contact Info"} subInfo={patientData.phone_number} />
         </div>
         <div className="profileSub">
           <div className="icon">
           <FaPhoneAlt/>
           </div>
-          <InfoBox title={"Emergency Contacts"} subInfo={"(415) 555-5676"} />
+          <InfoBox title={"Emergency Contacts"} subInfo={patientData.emergency_contact} />
         </div>
         <div className="profileSub">
           <div className="icon">
           <MdOutlineVerifiedUser/>
           </div>
-          <InfoBox title={"Insurance Provider"} subInfo={"Sunrise Health Assurance"} />
+          <InfoBox title={"Insurance Provider"} subInfo={patientData.insurance_type} />
         </div>
         </div>
         
@@ -51,6 +52,7 @@ const PatientProfile = () => {
         </div>
     </div>
   )
+  return null
 }
 
 export default PatientProfile

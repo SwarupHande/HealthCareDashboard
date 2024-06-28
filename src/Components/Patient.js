@@ -1,10 +1,11 @@
 import React from 'react'
 import { SlOptions } from "react-icons/sl";
 
-const Patient = ({patient}) => {
+const Patient = ({patient, handleOnClick}) => {
+  
+  if(patient){
   return (
-    
-    <div className='patientCard'>
+    <div className='patientCard' onClick={()=>handleOnClick(patient.phone_number)}>
         <div className="left">
             <img src={patient.profile_picture} alt="PatientImage" />
             <div className="information">
@@ -16,7 +17,8 @@ const Patient = ({patient}) => {
             <SlOptions/>
         </div>
     </div>
-  )
+  )}
+  return null
 }
 
 export default Patient

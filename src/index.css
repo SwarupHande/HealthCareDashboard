@@ -34,6 +34,8 @@ body{
   border-radius: 1.5rem;
   padding: 0 1rem;
   align-items: center;
+  position: sticky;
+  top: 0;
 }
 .logo img{
   height: 2rem;
@@ -89,12 +91,18 @@ body{
   padding: 1rem;
 }
 .patientList{
-  width: 367px;
+width: 18rem;
 }
 
 .patientProfile, #lab-result{
   height: fit-content;
-  width: 367px;
+  width: 18rem;
+}
+
+.results{
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 1rem;
 }
 .patients{
   max-height: 1054px;
@@ -211,9 +219,16 @@ body{
 .heartRate{
   background-color: #FFE6F1;
 }
-
+.arrow{
+  font-size: 2rem;
+}
+.bpm-result{
+  display: flex;
+  align-items: center;
+}
 .diagnosticList{
   background-color: #FFFFFF;
+  max-height: 310px;
 }
 .diagnosticList h3{
   margin-top: 1rem;
@@ -224,6 +239,8 @@ thead{
   font-weight: 700;
   border-top-left-radius: 1rem;
   text-align: left;
+  position: sticky;
+  top: .1;
 }
 th{
   padding : 1rem;
@@ -240,13 +257,18 @@ table{
   width: 100%;
   table-layout: fixed;
 }
-
+.table-list{
+  width: 100%;
+  height: 200px;
+  overflow-y: auto;
+}
 td{
   padding: 1rem;
 }
 .lab-results{
   display:flex;
   justify-content: space-between;
+  padding: .5rem 0;
 }
 .diagnosisHistory .chart{
   padding: 1rem;
@@ -283,11 +305,16 @@ td{
 #selector ::after{
   background: transparent;
 }
+.avgbox{
+  height: .8rem;
+  width: .8rem;
+  border-radius: 50%;
+  display: inline-block;
 
- .table-body {
-width: 303%;
-
-    height: 300px;
-    overflow-y: auto;
-
-  }
+}
+.sys{
+  background-color: #E66FD2;
+}
+.dia{
+  background-color: #7E6CAB;
+}
